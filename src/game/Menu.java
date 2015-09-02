@@ -13,20 +13,25 @@ public class Menu {
   public void displayMenu(){
     System.out.println("Welcome to the Nubmer Guessing Game!");
     System.out.println("Type 1 to start a new game");
-    System.out.println("Type 2 to quit");
+    System.out.println("Type 2 to choose maximum number");
   }
 
   public void promptUserInput(){
     System.out.print("Please enter your selection: ");
     Scanner scan = new Scanner(System.in);
     int choice = 0;
+    int maximum = 1000;
     try{
       choice = scan.nextInt();
       if(choice == 1){
-        GuessingGameLogic gg = new GuessingGameLogic(scan);
+        GuessingGameLogic gg = new GuessingGameLogic(scan, maximum);
         gg.guessingGame();
       }else if(choice == 2){
-        System.exit(0);
+    	  System.out.print("Please enter Maximum: ");
+    	  maximum = scan.nextInt();
+    	  GuessingGameLogic gg = new GuessingGameLogic(scan, maximum);
+          gg.guessingGame();
+        }else if(choice == 2){
       } else{
         printErrorMessage();
       }
