@@ -14,6 +14,8 @@ public class Menu {
     System.out.println("Welcome to the Nubmer Guessing Game!");
     System.out.println("Type 1 to start a new game");
     System.out.println("Type 2 to choose maximum number");
+    System.out.println("Type 3 to get bio of developer");
+    System.out.println("Type 4 to quit game");
   }
 
   public void promptUserInput(){
@@ -31,7 +33,10 @@ public class Menu {
     	  maximum = scan.nextInt();
     	  GuessingGameLogic gg = new GuessingGameLogic(scan, maximum);
           gg.guessingGame();
-        }else if(choice == 2){
+      }else if(choice == 3){
+    	  System.out.println("Ahadu Yeheyis");
+      }else if(choice == 4) {
+    	  System.exit(0);
       } else{
         printErrorMessage();
       }
